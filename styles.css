@@ -1,0 +1,78 @@
+/* Basic reset */
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+/* Navbar container */
+.navbar {
+	display: flex;                /* Establishes Flexbox layout */
+	align-items: center;          /* Vertically center items */
+	justify-content: space-between; /* Put first and last items at ends */
+	gap: 1rem;                    /* Horizontal spacing between direct children */
+	padding: 0.6rem 1rem;
+	background: #0a74da;
+	color: #fff;
+}
+
+.brand {
+	font-weight: 700;
+	font-size: 1.1rem;
+}
+
+/* Center links grow to take available space */
+.nav-links {
+	display: flex;                /* Make the list a flex container */
+	gap: 1rem;                    /* Space between links */
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	flex: 1;                      /* Allow links area to grow/shrink */
+	justify-content: center;      /* Center links horizontally in that space */
+}
+
+.nav-links a {
+	color: inherit;
+	text-decoration: none;
+	padding: 0.4rem 0.6rem;
+	border-radius: 6px;
+}
+.nav-links a:hover { background: rgba(255,255,255,0.08); }
+
+.nav-right {
+	display: flex;                /* Flex layout for right-side actions */
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.search {
+	padding: 0.35rem 0.5rem;
+	border-radius: 6px;
+	border: 1px solid rgba(255,255,255,0.18);
+	background: rgba(0, 0, 0, 0.06);
+	color: #ffffff;
+}
+
+.btn {
+	display: inline-block;
+	background: #fff;
+	color: #0a74da;
+	padding: 0.4rem 0.8rem;
+	border-radius: 6px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 700px) {
+	.navbar { flex-wrap: wrap; gap: 0.5rem; }
+	.nav-links { order: 3; width: 100%; justify-content: space-around; }
+	.nav-right { order: 2; }
+	.brand { order: 1; }
+}
+
+/* Small main content styling */
+main { padding: 1.25rem; }
+
+.content {
+    max-width: 600px;
+    margin: auto;
+}
